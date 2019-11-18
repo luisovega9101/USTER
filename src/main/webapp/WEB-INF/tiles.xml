@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="base.definition"
+		template="/WEB-INF/jsp/base/layout.jsp">
+		<put-attribute name="title" value="USTER" />
+		<put-attribute name="header" value="/WEB-INF/jsp/base/header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/base/footer.jsp" />
+		<put-attribute name="scriptStyles" value="" />
+	</definition>
+
+	<definition name="start_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/start.jsp" />
+	</definition>
+	
+	<definition name="list_vehicle_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/list_vehicle.jsp" />
+	</definition>
+	
+	<definition name="add_vehicle_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/add_vehicle.jsp" />
+	</definition>
+	
+	<definition name="edit_vehicle_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/edit_vehicle.jsp" />
+	</definition>
+		
+	<definition name="list_driver_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/list_driver.jsp" />
+	</definition>
+	
+	<definition name="add_driver_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/add_driver.jsp" />
+	</definition>	
+	
+	<definition name="edit_driver_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/edit_driver.jsp" />
+	</definition>	
+		
+	<definition name="list_trips_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/list_trip.jsp" />
+	</definition>
+	
+	<definition name="add_trip_tiles" extends="base.definition">
+		<put-attribute name="body" value="/WEB-INF/jsp/add_trip.jsp" />
+	</definition>
+	
+</tiles-definitions>

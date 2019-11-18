@@ -1,0 +1,45 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.footer {
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 150px;
+}
+
+.table.table-hover {
+	width:90%; 
+	margin-left: 5%; 
+	margin-right: 5%;
+}
+
+.caption {
+	caption-side: top;
+	font-size: 200%
+}
+
+#right {
+	text-align: right;
+	margin-right: 5%;
+}
+
+#no_result {
+	color: red;
+	text-align: center;
+	font-size: 200%;
+	font-weight: bold;
+}
+
+.error {
+	color: #ff0000;
+	font-style: italic;
+	font-weight: bold;
+}
