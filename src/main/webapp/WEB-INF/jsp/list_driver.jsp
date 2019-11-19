@@ -40,7 +40,7 @@
 			      <td>${driver.license}</td>
 			      <td>
 			      	<a href="edit_driver.html?id=${driver.id}" class="btn btn-warning"><spring:message code="btn.edit"/></a>
-			    	<a id="confirmation${driver.id}" name="confirmation" href="delete_driver.html?id=${driver.id}" 
+			    	<a id="confirmation${driver.id}" name="confirmation" href="#" 
 			    		class="btn btn-danger"><spring:message code="btn.delete"/></a>
 			      </td>
 			    </tr>
@@ -70,6 +70,17 @@
 	
 <script>
 $(document).ready(function() {
+	$("*[name='confirmation']").on('click', function () {
+		var id_confirmation = $(this).attr('id');
+	    var id = id_confirmation.replace("confirmation","");
+        if (confirm('<spring:message code="confirmation.driv"/>')){
+        	window.location.href = 'delete_driver.html?id=' + id;
+        };
+    })
+	
+});
+/*
+$(document).ready(function() {
 	$("*[name='confirmation']").click(function(){
 	    var id_confirmation = $(this).attr('id');
 	    var id = id_confirmation.replace("confirmation","");
@@ -94,4 +105,5 @@ $(document).ready(function() {
 	    });
 	})  
 });
+*/
 </script>

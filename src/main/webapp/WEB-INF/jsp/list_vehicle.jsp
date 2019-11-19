@@ -42,7 +42,7 @@
 			      <td>${vehicle.licenseRequired}</td>
 			      <td>
 			      	<a href="edit_vehicle.html?id=${vehicle.id}" class="btn btn-warning"><spring:message code="btn.edit"/></a>
-			      	<a id="confirmation${vehicle.id}" name="confirmation" href="delete_vehicle.html?id=${vehicle.id}" 
+			      	<a id="confirmation${vehicle.id}" name="confirmation" href="#" 
 			      		class="btn btn-danger"><spring:message code="btn.delete"/></a>
 			      </td>
 			    </tr>
@@ -73,6 +73,17 @@
 	
 <script>
 $(document).ready(function() {
+	$("*[name='confirmation']").on('click', function () {
+		var id_confirmation = $(this).attr('id');
+	    var id = id_confirmation.replace("confirmation","");
+        if (confirm('<spring:message code="confirmation.driv"/>')){
+        	window.location.href = 'delete_vehicle.html?id=' + id;
+        };
+    })
+	
+});
+/*
+$(document).ready(function() {
 	$("*[name='confirmation']").click(function(){
 	    var id_confirmation = $(this).attr('id');
 	    var id = id_confirmation.replace("confirmation","");
@@ -97,5 +108,5 @@ $(document).ready(function() {
 	    });
 	})  
 });
-
+*/
 </script>
