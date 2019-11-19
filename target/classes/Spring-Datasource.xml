@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+    <bean
+       class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="location">
+          <value>connection.properties</value>
+       </property>
+    </bean>
+ 
+    <bean id="servicioPropiedades" class="com.framework.uster.entity.ConnectionDB">
+      <property name="servername" value="${servername}"> </property>
+      <property name="port" value="${port}"> </property>
+      <property name="databasename" value="${databasename}"> </property>
+      <property name="user" value="${user}"> </property>
+      <property name="password" value="${password}"> </property>
+    </bean>
+    
+</beans>
