@@ -101,7 +101,7 @@ public class TripDAOImpl{
 			PreparedStatement ps = cn.prepareStatement(query);
 			ResultSet resultSet = ps.executeQuery();
 			query = "Select * from vehicles";
-			if(resultSet.next()) {
+			if(resultSet!=null) {
 				boolean first = true;
 				while (resultSet.next()) {
 					if(first) {
@@ -161,7 +161,7 @@ public class TripDAOImpl{
 			ps = cn.prepareStatement(query);
 			resultSet = ps.executeQuery();			
 			query = "Select * from drivers where license = '"+license+"'";
-			if(resultSet.next()) {
+			if(resultSet!=null) {
 				while (resultSet.next()) {
 					query+=" AND id != " + resultSet.getInt("driversid");						
 				}
@@ -169,7 +169,7 @@ public class TripDAOImpl{
 			ps = cn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 			resultSet = ps.executeQuery();			
 			int rowcount = 0;
-			if(resultSet.next()) {				
+			if(resultSet!=null) {				
 				resultSet.last();
 				rowcount = resultSet.getRow();
 				resultSet.beforeFirst(); 

@@ -4,6 +4,7 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
 <script src="js/function.js"></script>
@@ -56,7 +57,11 @@
 						cont++;
 					%>
 			      <th scope="row"><c:out value="<%=cont%>"></c:out></th>
-			      <td>${trip[0]}</td>
+			      <td>
+			      	<fmt:parseDate value="${trip[0]}" pattern="yyyy-MM-dd" var="myDate"/>
+					<fmt:formatDate value="${myDate}" var="startFormat" pattern="dd-MM-yyyy"/>
+					<c:out value = "${startFormat}"/>
+			      </td>
 			      <td>${trip[1]}</td>
 			      <td>${trip[2]}</td>			      
 			    </tr>
